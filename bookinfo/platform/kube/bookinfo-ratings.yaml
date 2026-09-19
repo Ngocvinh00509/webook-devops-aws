@@ -64,21 +64,21 @@ spec:
               name: ratings-mongodb-secret
               key: MONGO_DB_URL
 
-        - name: SERVICE_VERSION
-          value: "v2"
-        - name: DB_TYPE
-          value: "mysql"
-        - name: MYSQL_DB_HOST
-          value: "mysqldb"
-        - name: MYSQL_DB_PORT
-          value: "3306"
-        - name: MYSQL_DB_USER
-          value: "admin"
-        - name: MYSQL_DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: ratings-mysql-password
-              key: MYSQL_DB_PASSWORD
+        # - name: SERVICE_VERSION
+        #   value: "v2"
+        # - name: DB_TYPE
+        #   value: "mysql"
+        # - name: MYSQL_DB_HOST
+        #   value: "mysqldb"
+        # - name: MYSQL_DB_PORT
+        #   value: "3306"
+        # - name: MYSQL_DB_USER
+        #   value: "admin"
+        # - name: MYSQL_DB_PASSWORD
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: ratings-mysql-password
+        #       key: MYSQL_DB_PASSWORD
 
         ports:
         - containerPort: 9081
