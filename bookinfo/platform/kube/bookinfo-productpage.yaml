@@ -12,7 +12,7 @@ metadata:
     service: productpage
 spec:
   ports:
-  - port: 9080
+  - port: 9081
     name: http
   selector:
     app: productpage
@@ -41,7 +41,7 @@ spec:
     metadata:
       annotations:
         prometheus.io/scrape: "true"
-        prometheus.io/port: "9080"
+        prometheus.io/port: "9081"
         prometheus.io/path: "/metrics"
       labels:
         app: productpage
