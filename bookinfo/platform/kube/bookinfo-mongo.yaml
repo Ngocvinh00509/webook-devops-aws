@@ -40,7 +40,7 @@ spec:
       - name: ecr-secret
       containers:
       - name: mongodb 
-        image: 154931139523.dkr.ecr.ap-southeast-1.amazonaws.com/prod/webook-deops-aws:mongodb-latest
+        image: 154931139523.dkr.ecr.ap-southeast-1.amazonaws.com/prod/webook-devops-aws:mongodb-latest
         imagePullPolicy: Always
         ports:
         - containerPort: 27017
