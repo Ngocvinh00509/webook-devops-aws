@@ -6,8 +6,8 @@ on:
   pull_request:
 
 env:
-  AWS_REGION: us-east-1
-  ECR_REPOSITORY: prod/devops-on-aws-all-in-one
+  AWS_REGION: ap-southeast-1
+  ECR_REPOSITORY: prod/webook-devops-aws
 
 jobs:
   build-and-push:
