@@ -7,6 +7,7 @@ on:
 
 env:
   AWS_REGION: ap-southeast-1
+  EKS_CLUSTER_NAME: webook-devops-aws-prod-eks-01
   ECR_REPOSITORY: prod/webook-devops-aws
   NAMESPACE: default
 
@@ -58,15 +59,15 @@ jobs:
       - name: Install kubectl
         uses: azure/setup-kubectl@v4
 
-      - name: Set kubeconfig
+      - name: Update Kubeconfig from EKS
         run: |
-          mkdir -p ~/.kube
-          printf '%s' "${{ secrets.KUBECONFIG }}" > ~/.kube/config
-          chmod 600 ~/.kube/config
+          aws eks update-kubeconfig --region ${{ env.AWS_REGION }} --name ${{ env.EKS_CLUSTER_NAME }}
 
       - name: Update deployment image
         run: |
-          kubectl set image deployment/${{ matrix.deployment }} ${{ matrix.container }}=154931139523.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:${{ matrix.image_name }}-${{ github.event.workflow_run.head_sha }} -n ${{ env.NAMESPACE }}
+          kubectl set image deployment/${{ matrix.deployment }} \
+            ${{ matrix.container }}=154931139523.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:${{ matrix.image_name }}-${{ github.event.workflow_run.head_sha }} \
+            -n ${{ env.NAMESPACE }}
 
       - name: Check rollout status
         run: |
