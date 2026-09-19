@@ -17,10 +17,10 @@ COPY requirements.txt /opt/microservices/
 ARG flood_factor
 ENV FLOOD_FACTOR=${flood_factor:-0}
 
-EXPOSE 9081
+EXPOSE 9080
 WORKDIR /opt/microservices
 RUN python -m unittest discover
 
-CMD ["gunicorn", "-b", "[::]:9081", "productpage:app", "-w", "8", "--keep-alive", "2", "-k", "gevent"]
+CMD ["gunicorn", "-b", "[::]:9080", "productpage:app", "-w", "8", "--keep-alive", "2", "-k", "gevent"]
 
 USER 1000
