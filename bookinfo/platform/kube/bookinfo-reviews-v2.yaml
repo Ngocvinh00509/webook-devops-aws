@@ -23,7 +23,7 @@ spec:
       - name: ecr-secret
       containers:
       - name: reviews
-        image: 154931139523.dkr.ecr.ap-southeast-1.amazonaws.com/prod/webook-deops-aws:reviews-latest
+        image: 154931139523.dkr.ecr.ap-southeast-1.amazonaws.com/prod/webook-devops-aws:reviews-latest
         imagePullPolicy: Always
         env:
         - name: LOG_DIR
