@@ -11,7 +11,7 @@ metadata:
     service: ratings
 spec:
   ports:
-  - port: 9080
+  - port: 9081
     name: http
   selector:
     app: ratings
@@ -47,7 +47,7 @@ spec:
       - name: ecr-secret
       containers:
       - name: ratings
-        image: 736059458620.dkr.ecr.us-east-1.amazonaws.com/prod/devops-on-aws-all-in-one:ratings-latest
+        image: 154931139523.dkr.ecr.ap-southeast-1.amazonaws.com/prod/webook-deops-aws:ratings-latest
         
         imagePullPolicy: Always
         env:
