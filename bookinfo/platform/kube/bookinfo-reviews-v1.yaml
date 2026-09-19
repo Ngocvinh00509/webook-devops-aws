@@ -11,7 +11,7 @@ metadata:
     service: reviews
 spec:
   ports:
-  - port: 9080
+  - port: 9081
     name: http
   selector:
     app: reviews
@@ -47,7 +47,7 @@ spec:
       - name: ecr-secret
       containers:
       - name: reviews
-        image: 736059458620.dkr.ecr.us-east-1.amazonaws.com/prod/devops-on-aws-all-in-one:reviews-latest
+        image: 154931139523.dkr.ecr.ap-southeast-1.amazonaws.com/prod/webook-deops-aws:reviews-latest
         imagePullPolicy: Always
         env:
         - name: LOG_DIR
@@ -57,7 +57,7 @@ spec:
         - name: DB_TYPE
           value: mongodb
         ports:
-        - containerPort: 9080
+        - containerPort: 9081
         volumeMounts:
         - name: tmp
           mountPath: /tmp
