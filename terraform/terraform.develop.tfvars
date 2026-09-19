@@ -1,7 +1,7 @@
 # General Configuration
-aws_region          = "us-east-1"
+aws_region          = "ap-southeast-1"
 environment         = "prod"
-business_department = "devops-on-aws-all-in-one"
+business_department = "webook-devops-aws"
 # VPC Configuration
 vpc_name                                = "vpc-01"
 vpc_cidr_block                          = "10.0.0.0/16"
