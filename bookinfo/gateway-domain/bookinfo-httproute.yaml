@@ -1,0 +1,23 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: bookinfo-shared
+  namespace: default
+spec:
+  parentRefs:
+  - name: shared-gateway
+    namespace: default
+    sectionName: http-bookinfo
+  - name: shared-gateway
+    namespace: default
+    sectionName: https-bookinfo
+  hostnames:
+  - "bookinfo.hoangguruu.site"
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /
+    backendRefs:
+    - name: productpage
+      port: 9080

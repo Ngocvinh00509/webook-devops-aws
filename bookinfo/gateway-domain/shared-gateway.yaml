@@ -1,0 +1,87 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: shared-gateway
+  namespace: default
+spec:
+  gatewayClassName: istio
+  listeners:
+  - name: http-bookinfo
+    hostname: "bookinfo.hoangguruu.site"
+    port: 80
+    protocol: HTTP
+    allowedRoutes:
+      namespaces:
+        from: All
+
+  - name: https-bookinfo
+    hostname: "bookinfo.hoangguruu.site"
+    port: 443
+    protocol: HTTPS
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: bookinfo-tls
+    allowedRoutes:
+      namespaces:
+        from: All
+
+  - name: http-grafana
+    hostname: "grafana.hoangguruu.site"
+    port: 80
+    protocol: HTTP
+    allowedRoutes:
+      namespaces:
+        from: All
+
+  - name: https-grafana
+    hostname: "grafana.hoangguruu.site"
+    port: 443
+    protocol: HTTPS
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: grafana-tls
+    allowedRoutes:
+      namespaces:
+        from: All
+
+  - name: http-argocd
+    hostname: "argocd.hoangguruu.site"
+    port: 80
+    protocol: HTTP
+    allowedRoutes:
+      namespaces:
+        from: All
+
+  - name: https-argocd
+    hostname: "argocd.hoangguruu.site"
+    port: 443
+    protocol: HTTPS
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: argocd-tls
+    allowedRoutes:
+      namespaces:
+        from: All
+
+  - name: http-vault
+    hostname: "vault.hoangguruu.site"
+    port: 80
+    protocol: HTTP
+    allowedRoutes:
+      namespaces:
+        from: All
+
+  - name: https-vault
+    hostname: "vault.hoangguruu.site"
+    port: 443
+    protocol: HTTPS
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: vault-tls
+    allowedRoutes:
+      namespaces:
+        from: All
