@@ -51,8 +51,8 @@ spec:
         
         imagePullPolicy: Always
         env:
-        - name: SERVICE_VERSION
-          value: "v1"
+        # - name: SERVICE_VERSION
+        #   value: "v1"
 
         # - name: SERVICE_VERSION
         #   value: "v2"
