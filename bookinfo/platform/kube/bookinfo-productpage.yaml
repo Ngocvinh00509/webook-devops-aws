@@ -52,7 +52,7 @@ spec:
       - name: ecr-secret
       containers:
       - name: productpage
-        image: 736059458620.dkr.ecr.us-east-1.amazonaws.com/prod/devops-on-aws-all-in-one:productpage-latest
+        image: 154931139523.dkr.ecr.ap-southeast-1.amazonaws.com/prod/webook-deops-aws:productpage-latest
         imagePullPolicy: Always
         ports:
         - containerPort: 9080
