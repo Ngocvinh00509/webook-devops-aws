@@ -55,7 +55,7 @@ spec:
         image: 154931139523.dkr.ecr.ap-southeast-1.amazonaws.com/prod/webook-deops-aws:productpage-latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 9080
+        - containerPort: 9081
         volumeMounts:
         - name: tmp
           mountPath: /tmp
