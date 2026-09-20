@@ -8,5 +8,6 @@ spec:
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
+  commonName: "vault.dnvinh99.xyz"
   dnsNames:
-  - vault.dnvinh99.xyz
+  - "vault.dnvinh99.xyz"
