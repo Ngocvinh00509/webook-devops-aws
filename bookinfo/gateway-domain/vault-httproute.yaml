@@ -12,7 +12,7 @@ spec:
     namespace: default
     sectionName: https-vault
   hostnames:
-  - "vault.hoangguruu.site"
+  - "vault.dnvinh99.xyz"
   rules:
   - matches:
     - path:
