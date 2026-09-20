@@ -9,4 +9,4 @@ spec:
     name: letsencrypt-prod
     kind: ClusterIssuer
   dnsNames:
-  - bookinfo.hoangguruu.site
+  - webook.dnvinh99.xyz
