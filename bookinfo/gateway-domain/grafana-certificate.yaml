@@ -9,4 +9,4 @@ spec:
     name: letsencrypt-prod
     kind: ClusterIssuer
   dnsNames:
-  - grafana.hoangguruu.site
+  - grafana.dnvinh99.xyz
