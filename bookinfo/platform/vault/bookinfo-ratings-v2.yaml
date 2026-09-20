@@ -35,14 +35,14 @@ spec:
       - name: ecr-secret
       containers:
       - name: ratings
-        image: 736059458620.dkr.ecr.us-east-1.amazonaws.com/prod/devops-on-aws-all-in-one:ratings-latest
+        image: 154931139523.dkr.ecr.ap-southeast-1.amazonaws.com/prod/webook-deops-aws:ratings-latest
         imagePullPolicy: Always
         command: ["/bin/sh", "-c"]
         args:
           - |
             source /vault/secrets/config
             echo "$APP_MESSAGE"
-            node ratings.js 9080
+            node ratings.js 9081
 
         ports:
-        - containerPort: 9080
+        - containerPort: 9081
