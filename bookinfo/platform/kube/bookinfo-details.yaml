@@ -11,7 +11,7 @@ metadata:
 spec:
   ports:
   - port: 9081
-    name: http-details
+    name: http
   selector:
     app: details
 ---
