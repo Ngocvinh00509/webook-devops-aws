@@ -21,7 +21,7 @@ spec:
     tls:
       mode: Terminate
       certificateRefs:
-      - name: bookinfo-tls
+      - name: bookinfo-tls-secret
     allowedRoutes:
       namespaces:
         from: All
@@ -34,18 +34,6 @@ spec:
       namespaces:
         from: All
 
-  - name: https-grafana
-    hostname: "grafana.dnvinh99.xyz"
-    port: 443
-    protocol: HTTPS
-    tls:
-      mode: Terminate
-      certificateRefs:
-      - name: grafana-tls
-    allowedRoutes:
-      namespaces:
-        from: All
-
   - name: http-argocd
     hostname: "argocd.dnvinh99.xyz"
     port: 80
@@ -54,34 +42,10 @@ spec:
       namespaces:
         from: All
 
-  - name: https-argocd
-    hostname: "argocd.dnvinh99.xyz"
-    port: 443
-    protocol: HTTPS
-    tls:
-      mode: Terminate
-      certificateRefs:
-      - name: argocd-tls
-    allowedRoutes:
-      namespaces:
-        from: All
-
   - name: http-vault
     hostname: "vault.dnvinh99.xyz"
     port: 80
     protocol: HTTP
-    allowedRoutes:
-      namespaces:
-        from: All
-
-  - name: https-vault
-    hostname: "vault.dnvinh99.xyz"
-    port: 443
-    protocol: HTTPS
-    tls:
-      mode: Terminate
-      certificateRefs:
-      - name: vault-tls
     allowedRoutes:
       namespaces:
         from: All
