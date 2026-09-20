@@ -9,7 +9,7 @@ spec:
       namespace: default
       sectionName: https-argocd
   hostnames:
-    - argocd.hoangguruu.site
+    - argocd.dnvinh99.xyz
   rules:
     - matches:
         - path:
