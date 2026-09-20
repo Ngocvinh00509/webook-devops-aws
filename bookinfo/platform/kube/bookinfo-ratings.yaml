@@ -12,7 +12,7 @@ metadata:
 spec:
   ports:
   - port: 9081
-    name: http-ratings
+    name: http
   selector:
     app: ratings
 ---
