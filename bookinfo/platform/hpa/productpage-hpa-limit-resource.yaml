@@ -12,7 +12,7 @@ metadata:
     service: productpage
 spec:
   ports:
-  - port: 9080
+  - port: 9081
     name: http
   selector:
     app: productpage
@@ -52,10 +52,10 @@ spec:
       - name: ecr-secret
       containers:
       - name: productpage
-        image: 736059458620.dkr.ecr.us-east-1.amazonaws.com/prod/devops-on-aws-all-in-one:productpage-latest
+        image: 154931139523.dkr.ecr.ap-southeast-1.amazonaws.com/prod/webook-devops-aws:productpage-latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 9080
+        - containerPort: 9081
         resources:
           limits:
             cpu: 200m
