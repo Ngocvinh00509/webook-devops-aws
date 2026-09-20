@@ -10,6 +10,19 @@ spec:
   hostnames:
   - "webook.dnvinh99.xyz"
   rules:
+  # Rule 1: Tự động chuyển hướng từ / sang /productpage
+  - matches:
+    - path:
+        type: Exact
+        value: /
+    filters:
+    - type: RequestRedirect
+      requestRedirect:
+        path:
+          type: ReplaceFullPath
+          value: /productpage
+        statusCode: 302
+  # Rule 2: Trỏ traffic tới service productpage
   - matches:
     - path:
         type: PathPrefix
