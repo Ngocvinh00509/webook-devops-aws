@@ -1,23 +1,31 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
-  name: bookinfo-shared
+  name: productpage
   namespace: default
 spec:
   parentRefs:
   - name: shared-gateway
     namespace: default
-    sectionName: http-bookinfo
-  - name: shared-gateway
-    namespace: default
-    sectionName: https-bookinfo
   hostnames:
   - "webook.dnvinh99.xyz"
   rules:
   - matches:
     - path:
         type: PathPrefix
-        value: /
+        value: /productpage
+    - path:
+        type: PathPrefix
+        value: /static
+    - path:
+        type: PathPrefix
+        value: /login
+    - path:
+        type: PathPrefix
+        value: /logout
+    - path:
+        type: PathPrefix
+        value: /api/v1/products
     backendRefs:
     - name: productpage
       port: 9081
