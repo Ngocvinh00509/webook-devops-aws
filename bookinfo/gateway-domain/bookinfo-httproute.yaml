@@ -12,7 +12,7 @@ spec:
     namespace: default
     sectionName: https-bookinfo
   hostnames:
-  - "bookinfo.hoangguruu.site"
+  - "webook.dnvinh99.xyz"
   rules:
   - matches:
     - path:
@@ -20,4 +20,4 @@ spec:
         value: /
     backendRefs:
     - name: productpage
-      port: 9080
+      port: 9081
