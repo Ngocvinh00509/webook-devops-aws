@@ -13,7 +13,7 @@ metadata:
 spec:
   ports:
   - port: 9081
-    name: http
+    name: http-productpage
   selector:
     app: productpage
 ---
