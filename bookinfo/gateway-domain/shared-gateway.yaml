@@ -6,6 +6,7 @@ metadata:
 spec:
   gatewayClassName: istio
   listeners:
+  # --- WEBOOK ---
   - name: http-bookinfo
     hostname: "webook.dnvinh99.xyz"
     port: 80
@@ -13,7 +14,6 @@ spec:
     allowedRoutes:
       namespaces:
         from: All
-
   - name: https-bookinfo
     hostname: "webook.dnvinh99.xyz"
     port: 443
@@ -26,6 +26,7 @@ spec:
       namespaces:
         from: All
 
+  # --- GRAFANA ---
   - name: http-grafana
     hostname: "grafana.dnvinh99.xyz"
     port: 80
@@ -33,7 +34,19 @@ spec:
     allowedRoutes:
       namespaces:
         from: All
+  - name: https-grafana
+    hostname: "grafana.dnvinh99.xyz"
+    port: 443
+    protocol: HTTPS
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: grafana-tls        # Thay bằng tên Secret cert của Grafana
+    allowedRoutes:
+      namespaces:
+        from: All
 
+  # --- ARGOCD ---
   - name: http-argocd
     hostname: "argocd.dnvinh99.xyz"
     port: 80
@@ -41,11 +54,34 @@ spec:
     allowedRoutes:
       namespaces:
         from: All
+  - name: https-argocd
+    hostname: "argocd.dnvinh99.xyz"
+    port: 443
+    protocol: HTTPS
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: argocd-tls         # Thay bằng tên Secret cert của ArgoCD
+    allowedRoutes:
+      namespaces:
+        from: All
 
+  # --- VAULT ---
   - name: http-vault
     hostname: "vault.dnvinh99.xyz"
     port: 80
     protocol: HTTP
+    allowedRoutes:
+      namespaces:
+        from: All
+  - name: https-vault
+    hostname: "vault.dnvinh99.xyz"
+    port: 443
+    protocol: HTTPS
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: vault-tls          # Thay bằng tên Secret cert của Vault
     allowedRoutes:
       namespaces:
         from: All
