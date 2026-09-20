@@ -12,7 +12,7 @@ spec:
     namespace: default
     sectionName: https-grafana
   hostnames:
-  - "grafana.hoangguruu.site"
+  - "grafana.dnvinh99.xyz"
   rules:
   - matches:
     - path:
