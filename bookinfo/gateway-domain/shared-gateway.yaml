@@ -7,7 +7,7 @@ spec:
   gatewayClassName: istio
   listeners:
   - name: http-bookinfo
-    hostname: "bookinfo.hoangguruu.site"
+    hostname: "webook.dnvinh99.xyz"
     port: 80
     protocol: HTTP
     allowedRoutes:
@@ -15,7 +15,7 @@ spec:
         from: All
 
   - name: https-bookinfo
-    hostname: "bookinfo.hoangguruu.site"
+    hostname: "webook.dnvinh99.xyz"
     port: 443
     protocol: HTTPS
     tls:
@@ -27,7 +27,7 @@ spec:
         from: All
 
   - name: http-grafana
-    hostname: "grafana.hoangguruu.site"
+    hostname: "grafana.dnvinh99.xyz"
     port: 80
     protocol: HTTP
     allowedRoutes:
@@ -35,7 +35,7 @@ spec:
         from: All
 
   - name: https-grafana
-    hostname: "grafana.hoangguruu.site"
+    hostname: "grafana.dnvinh99.xyz"
     port: 443
     protocol: HTTPS
     tls:
@@ -47,7 +47,7 @@ spec:
         from: All
 
   - name: http-argocd
-    hostname: "argocd.hoangguruu.site"
+    hostname: "argocd.dnvinh99.xyz"
     port: 80
     protocol: HTTP
     allowedRoutes:
@@ -55,7 +55,7 @@ spec:
         from: All
 
   - name: https-argocd
-    hostname: "argocd.hoangguruu.site"
+    hostname: "argocd.dnvinh99.xyz"
     port: 443
     protocol: HTTPS
     tls:
@@ -67,7 +67,7 @@ spec:
         from: All
 
   - name: http-vault
-    hostname: "vault.hoangguruu.site"
+    hostname: "vault.dnvinh99.xyz"
     port: 80
     protocol: HTTP
     allowedRoutes:
@@ -75,7 +75,7 @@ spec:
         from: All
 
   - name: https-vault
-    hostname: "vault.hoangguruu.site"
+    hostname: "vault.dnvinh99.xyz"
     port: 443
     protocol: HTTPS
     tls:
