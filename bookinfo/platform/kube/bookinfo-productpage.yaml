@@ -12,7 +12,7 @@ metadata:
     service: productpage
 spec:
   ports:
-  - port: 9081
+  - port: 9080
     name: http
   selector:
     app: productpage
@@ -41,7 +41,7 @@ spec:
     metadata:
       annotations:
         prometheus.io/scrape: "true"
-        prometheus.io/port: "9081"
+        prometheus.io/port: "9080"
         prometheus.io/path: "/metrics"
       labels:
         app: productpage
@@ -55,7 +55,7 @@ spec:
         image: 154931139523.dkr.ecr.ap-southeast-1.amazonaws.com/prod/webook-devops-aws:productpage-latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 9081
+        - containerPort: 9080
         volumeMounts:
         - name: tmp
           mountPath: /tmp
