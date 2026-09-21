@@ -49,5 +49,5 @@ spec:
         image: 154931139523.dkr.ecr.ap-southeast-1.amazonaws.com/prod/webook-devops-aws:details-latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 9081
+        - containerPort: 9080
 ---
