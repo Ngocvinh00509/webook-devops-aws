@@ -6,7 +6,7 @@ metadata:
 spec:
   gatewayClassName: istio
   listeners:
-  # --- WEBOOK ---
+  # --- WEBOOK / BOOKINFO ---
   - name: http-bookinfo
     hostname: "webook.dnvinh99.xyz"
     port: 80
@@ -41,7 +41,7 @@ spec:
     tls:
       mode: Terminate
       certificateRefs:
-      - name: grafana-tls        # Thay bằng tên Secret cert của Grafana
+      - name: grafana-tls
     allowedRoutes:
       namespaces:
         from: All
@@ -61,7 +61,7 @@ spec:
     tls:
       mode: Terminate
       certificateRefs:
-      - name: argocd-tls         # Thay bằng tên Secret cert của ArgoCD
+      - name: argocd-tls
     allowedRoutes:
       namespaces:
         from: All
@@ -81,7 +81,7 @@ spec:
     tls:
       mode: Terminate
       certificateRefs:
-      - name: vault-tls          # Thay bằng tên Secret cert của Vault
+      - name: vault-tls
     allowedRoutes:
       namespaces:
         from: All
