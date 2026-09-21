@@ -5,6 +5,9 @@ metadata:
   namespace: default
 spec:
   gatewayClassName: istio
+  addresses:
+  - type: Hostname
+    value: shared-gateway-istio.default.svc.cluster.local
   listeners:
   # --- WEBOOK / BOOKINFO ---
   - name: http-bookinfo
